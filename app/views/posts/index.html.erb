@@ -1,4 +1,18 @@
 <h1>Posts</h1>
+<%= form_with url: posts_path, method: :get, local: true do |form| %>
+  <div>
+    <%= form.label :filter %>
+    <%= form.text_field :filter %>
+  </div>
+  <br/>
+  <div>
+    <%= form.label :order, "Order By Created At" %>
+    <%= form.select :order, ['desc', 'asc'] %>
+  </div>
+  </br/>
+  <%= form.submit 'Submit'%>
+<% end %>
+<br/></br/>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
